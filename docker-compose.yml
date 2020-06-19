@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres:10.13"
+    volumes:
+      - "my_dbdata:/var/lib/postgresql/data"
+    env_file:
+      - env_file
+
+  # craft:
+  #   build: .
+  #   expose:
+  #     - "5555"
+  #   command: python run_app.py
+  #   ports: 
+  #     - "5555:5555"
+  #   volumes:
+  #     - .:/CRAFT   
+    
+volumes:
+  my_dbdata:
